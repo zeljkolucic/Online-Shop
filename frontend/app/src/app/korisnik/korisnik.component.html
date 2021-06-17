@@ -1,0 +1,31 @@
+<h2>Dobrodosao {{korisnik.kor_ime}}</h2>
+<table>
+    <tr>
+        <th>Naziv</th>
+        <th>Kolicina</th>
+    </tr>
+    <tr *ngFor='let proizvod of proizvodi'>
+        <td *ngIf="proizvod.kolicina > 0">{{proizvod.naziv}}</td>
+        <td *ngIf="proizvod.kolicina > 0">{{proizvod.kolicina}}</td>
+        <td *ngIf="proizvod.kolicina > 0">
+            <input type='checkbox' [(ngModel)]='proizvod.zaKupovinu'>
+        </td>
+    </tr>
+    <tr>
+        <td colspan='2'>
+            <button (click)='kupi()'>Kupi</button>
+        </td>
+    </tr>
+</table>
+<br>
+<h5>Oceni proizvod</h5>
+<select [(ngModel)]='proizvod'>
+    <option *ngFor='let pro of proizvodi'>{{pro.naziv}}</option>
+</select>
+1<input type='radio' name='ocena' [(ngModel)]='ocena' value='1'>
+2<input type='radio' name='ocena' [(ngModel)]='ocena' value='2'>
+3<input type='radio' name='ocena' [(ngModel)]='ocena' value='3'>
+4<input type='radio' name='ocena' [(ngModel)]='ocena' value='4'>
+5<input type='radio' name='ocena' [(ngModel)]='ocena' value='5'>
+<br>
+<button (click)='oceni()'>Oceni</button>

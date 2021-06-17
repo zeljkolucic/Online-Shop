@@ -1,0 +1,13 @@
+<h2>Dobrodosao {{korisnik.kor_ime}}</h2>
+<table>
+    <tr>
+        <th>Naziv</th>
+        <th>Kolicina</th>
+    </tr>
+    <tr *ngFor='let proizvod of proizvodi' [class.red]='proizvod.kolicina<5'>
+        <td>{{proizvod.naziv}}</td>
+        <td>{{proizvod.kolicina}}</td>
+        <button (click)='uvecajBrojProizvoda(proizvod)'>+</button>
+        <button (click)='umanjiBrojProizvoda(proizvod)'>-</button>
+    </tr>
+</table>
